@@ -21,26 +21,7 @@ List<List<int>> willWinInOneMove(List<List<int>> inputState) {
   }
 }
 
-List<List<int>> willWinInTwoMoves(List<List<int>> inputState){
-  List<List<List<int>>> allPossibleMoves = possibleMoves(inputState);
-  for(List<List<int>> list in allPossibleMoves){
-    if(willWinInOneMove(list) != null){
-      return list;
-    }
-  }
-  return null;
-}
 
-List<List<int>> willWinInThreeMoves(List<List<int>> inputState){
-  List<List<List<int>>> allPossibleMoves = possibleMoves(inputState);
-  for(List<List<int>> list in allPossibleMoves){
-    if(willWinInTwoMoves(list) != null){
-      return list;
-
-    }
-  }
-  return null;
-}
 
 List<List<int>> willWinInGivenNumberOfMoves(List<List<int>> inputState, int numberOfMoves){
   List<List<List<int>>> allPossibleMoves = possibleMoves(inputState);
@@ -116,36 +97,5 @@ void printPossibleMoves(List<List<int>> inputState, int numberOfMoves){
 }
 
 main() {
-  
-
-
-
-  /*print(possibleMoves([
-    [1],
-    [],
-    [2, 3, 4]
-  ]));
-   print(willWinInTwoMoves([
-    [1],
-    [2],
-    [3, 4]
-  ]));
-  print(willWinInOneMove([
-    [1],
-    [],
-    [2, 3, 4]
-  ]));*/
-  // print(secondBestMove([[1],[2],[3,4]]));
-  // print(willFinishInTwoMoves([[2],[1],[3,4]]));
-  //print(possibleMoves([[2,3],[1],[4]]));
-  //print(bestMoves([[2,3], [1], [4,]]));
-  /*print(willWinInThreeMoves([[2,1],[3],[4]]));
-  print(possibleMoves([[1,2],[3],[4]]));*/
- // print(willWinInGivenNumberOfMoves([[1,2],[],[3,4]], 3));
-  //print(possibleMoves([[1,2],[],[3,4]]));
-  printPossibleMoves([[2,1],[3],[4]], 3);
-
-  
-
 
 }
